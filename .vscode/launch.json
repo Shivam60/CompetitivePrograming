@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (console)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "make c#",
+      "program": "${fileDirname}/bin/Debug/netcoreapp2.2/${relativeFileDirname}.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "c++",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "showDisplayString": false,
+      "environment": [],
+      "externalConsole": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "MIMode": "lldb",
+      "logging": {
+        "moduleLoad": false,
+        "programOutput": true,
+        "trace": false
+      },
+      "preLaunchTask": "Build with g++",
+      "osx": {
+        "MIMode": "lldb"
+      }
+    }
+  ]
+}

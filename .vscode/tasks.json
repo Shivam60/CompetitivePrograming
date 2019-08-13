@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build with g++",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-std=c++11",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "run c++",
+      "type": "shell",
+      "command": "cd ${fileDirname}/ && ./${fileBasenameNoExtension}",
+      "dependsOn": ["Build with g++"]
+    },
+    {
+      "label": "make c#",
+      "type": "shell",
+      "command": "cd ${fileDirname} && dotnet build"
+    },
+    {
+      "label": "run c#",
+      "type": "shell",
+      "command": "cd ${fileDirname} && dotnet run",
+      "dependsOn": "make c#"
+    }
+  ]
+}
